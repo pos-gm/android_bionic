@@ -65,9 +65,4 @@ void init_LD_DEBUG(const std::string& value);
 void __linker_log(int prio, const char* fmt, ...) __printflike(2, 3);
 void __linker_error(const char* fmt, ...) __printflike(1, 2);
 
-#define LD_DEBUG(what, x...) \
-  do { \
-    if (g_linker_debug_config.what) { \
-      __linker_log(ANDROID_LOG_INFO, x); \
-    } \
-  } while (false)
+#define LD_DEBUG(what, x...) do {} while (false)
